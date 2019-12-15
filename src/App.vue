@@ -1,19 +1,21 @@
 <template>
   <div id="app">
+    <Navigation></Navigation>    
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view/>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import TheNavBar from './components/TheNavBar.vue';
 
-export default {
-  name: 'app',
+@Component({
   components: {
-    HelloWorld
-  }
-}
+    Navigation: TheNavBar
+  },
+})
+export default class App extends Vue {}
 </script>
 
 <style>
